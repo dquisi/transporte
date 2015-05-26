@@ -62,7 +62,7 @@ public class TransporteMain extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        int i = JOptionPane.showConfirmDialog(this, "ESTA SEGURO...!!!");
+        int i = JOptionPane.showConfirmDialog(this, "ESTA SEGURO QUE DESEA SALIR...!!!");
         System.out.println(i);
         if(i == 0)
             System.exit(0);
