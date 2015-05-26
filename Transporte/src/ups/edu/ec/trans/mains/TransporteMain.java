@@ -5,6 +5,8 @@
  */
 package ups.edu.ec.trans.mains;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author julio
@@ -43,16 +45,16 @@ public class TransporteMain extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(199, Short.MAX_VALUE)
+                .addContainerGap(182, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addGap(153, 153, 153))
+                .addGap(170, 170, 170))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(129, 129, 129)
+                .addGap(128, 128, 128)
                 .addComponent(jButton1)
-                .addContainerGap(142, Short.MAX_VALUE))
+                .addContainerGap(143, Short.MAX_VALUE))
         );
 
         pack();
@@ -60,7 +62,10 @@ public class TransporteMain extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
+        int i = JOptionPane.showConfirmDialog(this, "ESTA SEGURO...!!!");
+        System.out.println(i);
+        if(i == 0)
+            System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
