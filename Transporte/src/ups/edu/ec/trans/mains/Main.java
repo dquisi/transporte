@@ -5,6 +5,8 @@
  */
 package ups.edu.ec.trans.mains;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Bertha Tacuri
@@ -60,8 +62,9 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
-        System.exit(0);
+        int i = JOptionPane.showConfirmDialog(this, "Esta Seguro");
+        if (i == 0)
+            System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
