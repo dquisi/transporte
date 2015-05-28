@@ -30,7 +30,7 @@ import javax.persistence.UniqueConstraint;
 @Table(name = "TRAN_PERSONA",uniqueConstraints = {
 @UniqueConstraint(columnNames = "PER_CEDULA")})
 @SequenceGenerator(name = "TRAN_PER_SEQ",sequenceName = "TRAN_PER_SEQ",initialValue = 1,allocationSize = 1)
-public class TRAN_PERSONA implements Serializable {
+public class TranPersona implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "TRAN_PER_SEQ")
@@ -66,13 +66,81 @@ public class TRAN_PERSONA implements Serializable {
         return hash;
     }
 
+    public void setPerId(Long perId) {
+        this.perId = perId;
+    }
+
+    public void setPerCedula(String perCedula) {
+        this.perCedula = perCedula;
+    }
+
+    public void setPerNombre(String perNombre) {
+        this.perNombre = perNombre;
+    }
+
+    public void setPerApellido(String perApellido) {
+        this.perApellido = perApellido;
+    }
+
+    public void setPerFechaNac(Date perFechaNac) {
+        this.perFechaNac = perFechaNac;
+    }
+
+    public void setPerDireccion(String perDireccion) {
+        this.perDireccion = perDireccion;
+    }
+
+    public void setPerCelular(String perCelular) {
+        this.perCelular = perCelular;
+    }
+
+    public void setPerTelefono(String perTelefono) {
+        this.perTelefono = perTelefono;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public Long getPerId() {
+        return perId;
+    }
+
+    public String getPerCedula() {
+        return perCedula;
+    }
+
+    public String getPerNombre() {
+        return perNombre;
+    }
+
+    public String getPerApellido() {
+        return perApellido;
+    }
+
+    public Date getPerFechaNac() {
+        return perFechaNac;
+    }
+
+    public String getPerDireccion() {
+        return perDireccion;
+    }
+
+    public String getPerCelular() {
+        return perCelular;
+    }
+
+    public String getPerTelefono() {
+        return perTelefono;
+    }
+
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the perId fields are not set
-        if (!(object instanceof TRAN_PERSONA)) {
+        if (!(object instanceof TranPersona)) {
             return false;
         }
-        TRAN_PERSONA other = (TRAN_PERSONA) object;
+        TranPersona other = (TranPersona) object;
         if ((this.perId == null && other.perId != null) || (this.perId != null && !this.perId.equals(other.perId))) {
             return false;
         }

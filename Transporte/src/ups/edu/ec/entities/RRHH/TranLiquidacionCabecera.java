@@ -27,7 +27,8 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "TRAN_LIQUIDACION_CABECERA")
 @SequenceGenerator(name = "TRAN_LCA_SEQ",sequenceName = "TRAN_LCA_SEQ",initialValue = 1,allocationSize = 1)
-public class TRAN_LIQUIDACION_CABECERA implements Serializable {
+
+public class TranLiquidacionCabecera implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "TRAN_LCA_SEQ")
@@ -61,13 +62,73 @@ public class TRAN_LIQUIDACION_CABECERA implements Serializable {
         return hash;
     }
 
+    public void setLcaId(Long lcaId) {
+        this.lcaId = lcaId;
+    }
+
+    public void setLcaSenores(String lcaSenores) {
+        this.lcaSenores = lcaSenores;
+    }
+
+    public void setLcaDireccion(String lcaDireccion) {
+        this.lcaDireccion = lcaDireccion;
+    }
+
+    public void setLcaFechaE(Date lcaFechaE) {
+        this.lcaFechaE = lcaFechaE;
+    }
+
+    public void setLcaUsuario(String lcaUsuario) {
+        this.lcaUsuario = lcaUsuario;
+    }
+
+    public void setLcaFecha(Date lcaFecha) {
+        this.lcaFecha = lcaFecha;
+    }
+
+    public void setLcaEstado(String lcaEstado) {
+        this.lcaEstado = lcaEstado;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public Long getLcaId() {
+        return lcaId;
+    }
+
+    public String getLcaSenores() {
+        return lcaSenores;
+    }
+
+    public String getLcaDireccion() {
+        return lcaDireccion;
+    }
+
+    public Date getLcaFechaE() {
+        return lcaFechaE;
+    }
+
+    public String getLcaUsuario() {
+        return lcaUsuario;
+    }
+
+    public Date getLcaFecha() {
+        return lcaFecha;
+    }
+
+    public String getLcaEstado() {
+        return lcaEstado;
+    }
+
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof TRAN_LIQUIDACION_CABECERA)) {
+        if (!(object instanceof TranLiquidacionCabecera)) {
             return false;
         }
-        TRAN_LIQUIDACION_CABECERA other = (TRAN_LIQUIDACION_CABECERA) object;
+        TranLiquidacionCabecera other = (TranLiquidacionCabecera) object;
         if ((this.lcaId == null && other.lcaId != null) || (this.lcaId != null && !this.lcaId.equals(other.lcaId))) {
             return false;
         }

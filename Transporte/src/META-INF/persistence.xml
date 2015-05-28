@@ -3,18 +3,18 @@
   <persistence-unit name="TransportePU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>ups.edu.ec.entities.RRHH.TRAN_LIQUIDACION</class>
-    <class>ups.edu.ec.entities.RRHH.TRAN_LIQUIDACION_FECHA_DETALLE</class>
-    <class>ups.edu.ec.entities.RRHH.TRAN_LIQUIDACION_CABECERA</class>
-    <class>ups.edu.ec.entities.RRHH.TRAN_LIQUIDACION_DETALLE</class>
-    <class>ups.edu.ec.entities.RRHH.TRAN_PERSONA</class>
-    <class>ups.edu.ec.entities.RRHH.TRAN_TIPO_PERSONA</class>
+    <class>ups.edu.ec.entities.RRHH.TranLiquidacionCabecera</class>
+    <class>ups.edu.ec.entities.RRHH.TranLiquidacionDetalle</class>
+    <class>ups.edu.ec.entities.RRHH.TranLiquidacionFechaDetalle</class>
+    <class>ups.edu.ec.entities.RRHH.TranTipoPersona</class>
+    <class>ups.edu.ec.entities.RRHH.TranPersona</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/dbagenda"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/dbtransporte"/>
       <property name="javax.persistence.jdbc.user" value="postgres"/>
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
       <property name="javax.persistence.jdbc.password" value="postgres"/>
       <property name="javax.persistence.schema-generation.database.action" value="create"/>
-      <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+      <property name="eclipselink.ddl-generation" value="create-tables"/>
     </properties>
   </persistence-unit>
 </persistence>

@@ -23,7 +23,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "TRAN_LIQUIDACION_DETALLE")
 @SequenceGenerator(name = "TRAN_LDE_SEQ",sequenceName = "TRAN_LDE_SEQ",initialValue = 1,allocationSize = 1)
-public class TRAN_LIQUIDACION_DETALLE implements Serializable {
+
+public class TranLiquidacionDetalle implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "TRAN_LDE_SEQ")
@@ -36,7 +37,7 @@ public class TRAN_LIQUIDACION_DETALLE implements Serializable {
     //Realacion liqDetall_liqCabecera
     @JoinColumn(name = "LCA_ID", referencedColumnName = "LCA_ID")
     @ManyToOne(fetch = FetchType.LAZY)
-    //
+    
     
     
     
@@ -47,13 +48,41 @@ public class TRAN_LIQUIDACION_DETALLE implements Serializable {
         return hash;
     }
 
+    public void setLdeId(Long ldeId) {
+        this.ldeId = ldeId;
+    }
+
+    public void setLdeSubtotal(double ldeSubtotal) {
+        this.ldeSubtotal = ldeSubtotal;
+    }
+
+    public void setLdeTotal(double ldeTotal) {
+        this.ldeTotal = ldeTotal;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public Long getLdeId() {
+        return ldeId;
+    }
+
+    public double getLdeSubtotal() {
+        return ldeSubtotal;
+    }
+
+    public double getLdeTotal() {
+        return ldeTotal;
+    }
+
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the ldeId fields are not set
-        if (!(object instanceof TRAN_LIQUIDACION_DETALLE)) {
+        if (!(object instanceof TranLiquidacionDetalle)) {
             return false;
         }
-        TRAN_LIQUIDACION_DETALLE other = (TRAN_LIQUIDACION_DETALLE) object;
+        TranLiquidacionDetalle other = (TranLiquidacionDetalle) object;
         if ((this.ldeId == null && other.ldeId != null) || (this.ldeId != null && !this.ldeId.equals(other.ldeId))) {
             return false;
         }

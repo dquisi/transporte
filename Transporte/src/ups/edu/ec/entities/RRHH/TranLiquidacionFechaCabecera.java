@@ -25,7 +25,8 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "TRAN_LIQUIDACION_FECHA_CABECERA")
 @SequenceGenerator(name = "TRAN_LFC_SEQ",sequenceName = "TRAN_LFC_SEQ",initialValue = 1,allocationSize = 1)       
-public class TRAN_LIQUIDACION_FECHA_CABECERA implements Serializable {
+
+public class TranLiquidacionFechaCabecera implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "TRAN_LFC_SEQ")
@@ -77,13 +78,85 @@ public class TRAN_LIQUIDACION_FECHA_CABECERA implements Serializable {
         return hash;
     }
 
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public Long getLfcId() {
+        return lfcId;
+    }
+
+    public Date getLfcFecha() {
+        return lfcFecha;
+    }
+
+    public Date getLfcFechaAct() {
+        return lfcFechaAct;
+    }
+
+    public String getLfcPersona() {
+        return lfcPersona;
+    }
+
+    public int getLfcNumero() {
+        return lfcNumero;
+    }
+
+    public double getLfcSaldoCob() {
+        return lfcSaldoCob;
+    }
+
+    public double getLfcSaldoPag() {
+        return lfcSaldoPag;
+    }
+
+    public double getLfcTotalFlete() {
+        return lfcTotalFlete;
+    }
+
+    public double getLfcRetencion() {
+        return lfcRetencion;
+    }
+
+    public double getLfcCobroRut() {
+        return lfcCobroRut;
+    }
+
+    public double getLfcCobroCuenca() {
+        return lfcCobroCuenca;
+    }
+
+    public double getLfcTotalPag() {
+        return lfcTotalPag;
+    }
+
+    public double getLfcLiquidacion1() {
+        return lfcLiquidacion1;
+    }
+
+    public double getLfcLiquidacion2() {
+        return lfcLiquidacion2;
+    }
+
+    public String getLfcDescuento1() {
+        return lfcDescuento1;
+    }
+
+    public String getLfcDescuento2() {
+        return lfcDescuento2;
+    }
+
+    public String getLfcEstado() {
+        return lfcEstado;
+    }
+
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof TRAN_LIQUIDACION_FECHA_CABECERA)) {
+        if (!(object instanceof TranLiquidacionFechaCabecera)) {
             return false;
         }
-        TRAN_LIQUIDACION_FECHA_CABECERA other = (TRAN_LIQUIDACION_FECHA_CABECERA) object;
+        TranLiquidacionFechaCabecera other = (TranLiquidacionFechaCabecera) object;
         if ((this.lfcId == null && other.lfcId != null) || (this.lfcId != null && !this.lfcId.equals(other.lfcId))) {
             return false;
         }

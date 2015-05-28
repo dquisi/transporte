@@ -26,7 +26,8 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "TRAN_LIQUIDACION_FECHA_DETALLE")
 @SequenceGenerator(name = "TRAN_LFD_SEQ",sequenceName = "TRAN_LFD_SEQ",initialValue = 1,allocationSize = 1)
-public class TRAN_LIQUIDACION_FECHA_DETALLE implements Serializable {
+
+public class TranLiquidacionFechaDetalle implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE ,generator = "TRAN_LFD_SEQ")
@@ -63,6 +64,7 @@ public class TRAN_LIQUIDACION_FECHA_DETALLE implements Serializable {
     @JoinColumn(name = "LFC_ID", referencedColumnName = "LFC_ID")
     @ManyToOne(fetch = FetchType.LAZY)
 
+    
     @Override
     public int hashCode() {
         int hash = 0;
@@ -70,13 +72,129 @@ public class TRAN_LIQUIDACION_FECHA_DETALLE implements Serializable {
         return hash;
     }
 
+    public void setLfdId(Long lfdId) {
+        this.lfdId = lfdId;
+    }
+
+    public void setLfdFecha(Date lfdFecha) {
+        this.lfdFecha = lfdFecha;
+    }
+
+    public void setLfdNumGuia(double lfdNumGuia) {
+        this.lfdNumGuia = lfdNumGuia;
+    }
+
+    public void setLfdPago(double lfdPago) {
+        this.lfdPago = lfdPago;
+    }
+
+    public void setLfdCobroRuta(double lfdCobroRuta) {
+        this.lfdCobroRuta = lfdCobroRuta;
+    }
+
+    public void setLfdNumCuenca(double lfdNumCuenca) {
+        this.lfdNumCuenca = lfdNumCuenca;
+    }
+
+    public void setLfdToatlFlete(double lfdToatlFlete) {
+        this.lfdToatlFlete = lfdToatlFlete;
+    }
+
+    public void setLfdPorcentaje1512(double lfdPorcentaje1512) {
+        this.lfdPorcentaje1512 = lfdPorcentaje1512;
+    }
+
+    public void setLfdTotalLiquidacion(double lfdTotalLiquidacion) {
+        this.lfdTotalLiquidacion = lfdTotalLiquidacion;
+    }
+
+    public void setLfdRetencionPor(double lfdRetencionPor) {
+        this.lfdRetencionPor = lfdRetencionPor;
+    }
+
+    public void setLfdLiquidacion1(double lfdLiquidacion1) {
+        this.lfdLiquidacion1 = lfdLiquidacion1;
+    }
+
+    public void setLfdLiquidacion2(double lfdLiquidacion2) {
+        this.lfdLiquidacion2 = lfdLiquidacion2;
+    }
+
+    public void setLfdDescuento1(String lfdDescuento1) {
+        this.lfdDescuento1 = lfdDescuento1;
+    }
+
+    public void setLfdDescuento2(String lfdDescuento2) {
+        this.lfdDescuento2 = lfdDescuento2;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public Long getLfdId() {
+        return lfdId;
+    }
+
+    public Date getLfdFecha() {
+        return lfdFecha;
+    }
+
+    public double getLfdNumGuia() {
+        return lfdNumGuia;
+    }
+
+    public double getLfdPago() {
+        return lfdPago;
+    }
+
+    public double getLfdCobroRuta() {
+        return lfdCobroRuta;
+    }
+
+    public double getLfdNumCuenca() {
+        return lfdNumCuenca;
+    }
+
+    public double getLfdToatlFlete() {
+        return lfdToatlFlete;
+    }
+
+    public double getLfdPorcentaje1512() {
+        return lfdPorcentaje1512;
+    }
+
+    public double getLfdTotalLiquidacion() {
+        return lfdTotalLiquidacion;
+    }
+
+    public double getLfdRetencionPor() {
+        return lfdRetencionPor;
+    }
+
+    public double getLfdLiquidacion1() {
+        return lfdLiquidacion1;
+    }
+
+    public double getLfdLiquidacion2() {
+        return lfdLiquidacion2;
+    }
+
+    public String getLfdDescuento1() {
+        return lfdDescuento1;
+    }
+
+    public String getLfdDescuento2() {
+        return lfdDescuento2;
+    }
+
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof TRAN_LIQUIDACION_FECHA_DETALLE)) {
+        if (!(object instanceof TranLiquidacionFechaDetalle)) {
             return false;
         }
-        TRAN_LIQUIDACION_FECHA_DETALLE other = (TRAN_LIQUIDACION_FECHA_DETALLE) object;
+        TranLiquidacionFechaDetalle other = (TranLiquidacionFechaDetalle) object;
         if ((this.lfdId == null && other.lfdId != null) || (this.lfdId != null && !this.lfdId.equals(other.lfdId))) {
             return false;
         }
