@@ -13,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import ups.edu.ec.entities.Abstract.TraAuditoria;
 
 /**
  *
@@ -21,11 +22,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "TRA_MOTIVO_TRASLADOS")
 @SequenceGenerator(name = "TRA_MOTIVO_TRASLADOS_SEQ", sequenceName = "TRA_MOTIVO_TRASLADOS_SEQ", initialValue = 1, allocationSize = 1)
-public class Motivo_Traslados implements Serializable {
+public class Motivo_Traslados extends TraAuditoria implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TRA_MOTIVO_TRASLADOS_SEQ")
-    @Column(name="MTR_ID_PK")
+    @Column(name="MTR_ID_PK",nullable = false, unique = true)
     private Long mtr_id_pk;
 
     @Column(name="MTR_DESCRIPCION")
