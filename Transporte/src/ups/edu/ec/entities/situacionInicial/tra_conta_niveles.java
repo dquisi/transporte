@@ -19,25 +19,35 @@ import javax.persistence.Table;
  * @author jlc
  */
 @Entity
-@Table(name = "TRA_TIPO_CUENTAS")
-@SequenceGenerator(name = "TRA_TIPO_CUENTAS_SEQ", sequenceName = "TRA_TIPO_CUENTAS_SEQ", initialValue = 1, allocationSize = 1)
-public class tra_tipo_cuentas implements Serializable {
+@Table(name = "TRA_CONTA_NIVELES")
+@SequenceGenerator(name = "TRA_CONTA_NIVELES_SEQ", sequenceName = "TRA_CONTA_NIVELES_SEQ", initialValue = 1, allocationSize = 1)
+public class tra_conta_niveles implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "TICU_ID")
+     @Column(name = "CONI_ID")
     private Long id;
-    @Column(name = "TICU_DESCRIPCION")
-    private  String ticuDescripcion;
+    @Column(name = "CONI_VALOR")
+    private double coniValor;
+    @Column(name = "CONI_DESCRIPCION")
+    private String coniDescripcion;
 
-    public String getTicuDescripcion() {
-        return ticuDescripcion;
+    public double getConiValor() {
+        return coniValor;
     }
 
-    public void setTicuDescripcion(String ticuDescripcion) {
-        this.ticuDescripcion = ticuDescripcion;
+    public void setConiValor(double coniValor) {
+        this.coniValor = coniValor;
     }
-    
+
+    public String getConiDescripcion() {
+        return coniDescripcion;
+    }
+
+    public void setConiDescripcion(String coniDescripcion) {
+        this.coniDescripcion = coniDescripcion;
+    }
+
     public Long getId() {
         return id;
     }
@@ -56,10 +66,10 @@ public class tra_tipo_cuentas implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof tra_tipo_cuentas)) {
+        if (!(object instanceof tra_conta_niveles)) {
             return false;
         }
-        tra_tipo_cuentas other = (tra_tipo_cuentas) object;
+        tra_conta_niveles other = (tra_conta_niveles) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -68,7 +78,7 @@ public class tra_tipo_cuentas implements Serializable {
 
     @Override
     public String toString() {
-        return "ups.edu.ec.entities.situacionInicial.tra_tipo_cuentas[ id=" + id + " ]";
+        return "ups.edu.ec.entities.situacionInicial.tra_conta_niveles[ id=" + id + " ]";
     }
     
 }
