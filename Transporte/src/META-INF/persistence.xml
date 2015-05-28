@@ -2,6 +2,11 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="TransportePU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>ups.edu.ec.entities.FACTURACION.TraFacturaEstado</class>
+    <class>ups.edu.ec.entities.FACTURACION.TraFacturaDetalle</class>
+    <class>ups.edu.ec.entities.FACTURACION.TraFacturaCabecera</class>
+    <class>ups.edu.ec.entities.FACTURACION.TraFacturaTipoPagoCobro</class>
+    <class>ups.edu.ec.entities.FACTURACION.TraFacturaIvas</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/TRANSPORTE_DB"/>
       <property name="javax.persistence.jdbc.user" value="postgres"/>

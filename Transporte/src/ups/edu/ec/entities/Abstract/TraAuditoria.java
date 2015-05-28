@@ -21,7 +21,7 @@ import javax.persistence.TemporalType;
  * @author Bertha Tacuri
  */
 @MappedSuperclass
-public abstract class TranAuditoria {
+public abstract class TraAuditoria {
     
     @Column(name = "AUD_USUARIO_INSERTO")
     private String audUsuarioInserto;
