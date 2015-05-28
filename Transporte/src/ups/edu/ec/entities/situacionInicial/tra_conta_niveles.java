@@ -24,7 +24,7 @@ import javax.persistence.Table;
 public class tra_conta_niveles implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TRA_CONTA_NIVELES_SEQ")
      @Column(name = "CONI_ID")
     private Long id;
     @Column(name = "CONI_VALOR")

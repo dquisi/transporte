@@ -24,8 +24,8 @@ import javax.persistence.Table;
 public class tra_conta_cuenta implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "COCU_ID")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TRA_CONTA_CUENTA_SEQ")
+    @Column(name = "COCU_ID_PK")
     private Long id;
      @Column(name = "COCU_CODIGO")
      private String cocuCodigo;
