@@ -6,22 +6,28 @@
 package ups.edu.ec.entities.situacionInicial;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  *
  * @author jlc
  */
 @Entity
+@Table(name = "TRA_TIPO_CUENTAS")
 public class tra_tipo_cuentas implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "TICU_ID")
     private Long id;
-
+    @Column(name = "TICU_DESCRIPCION")
+    private  String ticuDescripcion;
+    
     public Long getId() {
         return id;
     }
