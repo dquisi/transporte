@@ -33,11 +33,11 @@ public class TRAN_LIQUIDACION_DETALLE implements Serializable {
     private double ldeSubtotal;
     @Column(name = "LDE_TOTAL",precision = 10,scale = 2)
     private double ldeTotal;
-    @Column(name = "LDE_ID_LIQ")
-    private String ldeIdLiq;
-    //Realacion
+    //Realacion liqDetall_liqCabecera
     @JoinColumn(name = "LCA_ID", referencedColumnName = "LCA_ID")
     @ManyToOne(fetch = FetchType.LAZY)
+    //
+    
     
     
     @Override

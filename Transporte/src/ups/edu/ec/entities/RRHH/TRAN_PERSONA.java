@@ -15,6 +15,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -51,9 +52,11 @@ public class TRAN_PERSONA implements Serializable {
     private String perCelular;
     @Column(name = "PER_TELEFONO")
     private String perTelefono;
-    //Relacion
+    //Relacion Persona_tipoPersona
     @JoinColumn(name = "TPE_ID", referencedColumnName = "TPE_ID")
     @ManyToOne(fetch = FetchType.LAZY)
+    //Realacion Persona_liqCabecera
+    @OneToMany(mappedBy = "PER_ID", fetch = FetchType.LAZY)    
     
 
     @Override

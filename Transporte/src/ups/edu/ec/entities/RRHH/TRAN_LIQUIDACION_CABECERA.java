@@ -12,6 +12,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -45,8 +47,12 @@ public class TRAN_LIQUIDACION_CABECERA implements Serializable {
     private Date lcaFecha;
     @Column(name = "LCA_ESTADDO")
     private String lcaEstado;
-    //Relacion
+    //Relacion liqCabecera_liqDetalle
     @OneToMany(mappedBy = "LCA_ID", fetch = FetchType.LAZY)
+    //Relacion liqCabecera_Persona
+    @JoinColumn(name = "PER_ID", referencedColumnName = "PER_ID")
+    @ManyToOne(fetch = FetchType.LAZY)
+    
     
     @Override
     public int hashCode() {
