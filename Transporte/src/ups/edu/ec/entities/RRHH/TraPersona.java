@@ -21,19 +21,20 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
+import ups.edu.ec.entities.Abstract.TraAuditoria;
 
 /**
  *
  * @author maga
  */
 @Entity
-@Table(name = "TRAN_PERSONA",uniqueConstraints = {
+@Table(name = "TRA_PERSONA",uniqueConstraints = {
 @UniqueConstraint(columnNames = "PER_CEDULA")})
-@SequenceGenerator(name = "TRAN_PER_SEQ",sequenceName = "TRAN_PER_SEQ",initialValue = 1,allocationSize = 1)
-public class TranPersona implements Serializable {
+@SequenceGenerator(name = "TRA_PER_SEQ",sequenceName = "TRA_PER_SEQ",initialValue = 1,allocationSize = 1)
+public class TraPersona extends TraAuditoria implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "TRAN_PER_SEQ")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "TRA_PER_SEQ")
     @Column(name = "PER_ID_PK",nullable = false,unique = true)
     private Long perId;
     
@@ -146,10 +147,10 @@ public class TranPersona implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the perId fields are not set
-        if (!(object instanceof TranPersona)) {
+        if (!(object instanceof TraPersona)) {
             return false;
         }
-        TranPersona other = (TranPersona) object;
+        TraPersona other = (TraPersona) object;
         if ((this.perId == null && other.perId != null) || (this.perId != null && !this.perId.equals(other.perId))) {
             return false;
         }

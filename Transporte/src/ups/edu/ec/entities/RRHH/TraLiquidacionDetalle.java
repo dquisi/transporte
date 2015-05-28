@@ -15,19 +15,20 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import ups.edu.ec.entities.Abstract.TraAuditoria;
 
 /**
  *
  * @author maga
  */
 @Entity
-@Table(name = "TRAN_LIQUIDACION_DETALLE")
-@SequenceGenerator(name = "TRAN_LDE_SEQ",sequenceName = "TRAN_LDE_SEQ",initialValue = 1,allocationSize = 1)
+@Table(name = "TRA_LIQUIDACION_DETALLE")
+@SequenceGenerator(name = "TRAN_LDE_SEQ",sequenceName = "TRA_LDE_SEQ",initialValue = 1,allocationSize = 1)
 
-public class TranLiquidacionDetalle implements Serializable {
+public class TraLiquidacionDetalle extends TraAuditoria implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "TRAN_LDE_SEQ")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "TRA_LDE_SEQ")
     @Column(name = "LDE_ID_PK",nullable = false,unique = true)
     private Long ldeId;
     
@@ -82,10 +83,10 @@ public class TranLiquidacionDetalle implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the ldeId fields are not set
-        if (!(object instanceof TranLiquidacionDetalle)) {
+        if (!(object instanceof TraLiquidacionDetalle)) {
             return false;
         }
-        TranLiquidacionDetalle other = (TranLiquidacionDetalle) object;
+        TraLiquidacionDetalle other = (TraLiquidacionDetalle) object;
         if ((this.ldeId == null && other.ldeId != null) || (this.ldeId != null && !this.ldeId.equals(other.ldeId))) {
             return false;
         }

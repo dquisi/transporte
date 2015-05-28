@@ -15,19 +15,20 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+import ups.edu.ec.entities.Abstract.TraAuditoria;
 
 /**
  *
  * @author maga
  */
 @Entity
-@Table(name = "TRAN_TIPO_PERSONA")
-@SequenceGenerator(name = "TRAN_TPE_SEQ",sequenceName = "TRAN_TPE_SEQ",initialValue = 1,allocationSize = 1)
+@Table(name = "TRA_TIPO_PERSONA")
+@SequenceGenerator(name = "TRA_TPE_SEQ",sequenceName = "TRA_TPE_SEQ",initialValue = 1,allocationSize = 1)
 
-public class TranTipoPersona implements Serializable {
+public class TraTipoPersona implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "TRAN_TPE_SEQ")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "TRA_TPE_SEQ")
     @Column(name = "TPE_ID_PK",nullable = false,unique = true)
     private Long tpeId;
     
@@ -75,10 +76,10 @@ public class TranTipoPersona implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the tpeId fields are not set
-        if (!(object instanceof TranTipoPersona)) {
+        if (!(object instanceof TraTipoPersona)) {
             return false;
         }
-        TranTipoPersona other = (TranTipoPersona) object;
+        TraTipoPersona other = (TraTipoPersona) object;
         if ((this.tpeId == null && other.tpeId != null) || (this.tpeId != null && !this.tpeId.equals(other.tpeId))) {
             return false;
         }

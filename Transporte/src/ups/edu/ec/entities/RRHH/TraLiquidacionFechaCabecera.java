@@ -17,19 +17,20 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import ups.edu.ec.entities.Abstract.TraAuditoria;
 
 /**
  *
  * @author maga
  */
 @Entity
-@Table(name = "TRAN_LIQUIDACION_FECHA_CABECERA")
-@SequenceGenerator(name = "TRAN_LFC_SEQ",sequenceName = "TRAN_LFC_SEQ",initialValue = 1,allocationSize = 1)       
+@Table(name = "TRA_LIQUIDACION_FECHA_CABECERA")
+@SequenceGenerator(name = "TRA_LFC_SEQ",sequenceName = "TRA_LFC_SEQ",initialValue = 1,allocationSize = 1)       
 
-public class TranLiquidacionFechaCabecera implements Serializable {
+public class TraLiquidacionFechaCabecera extends TraAuditoria implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "TRAN_LFC_SEQ")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "TRA_LFC_SEQ")
     @Column(name = "LFC_ID_PK",insertable = false,unique = true)
     private Long lfcId;
     
@@ -169,10 +170,10 @@ public class TranLiquidacionFechaCabecera implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof TranLiquidacionFechaCabecera)) {
+        if (!(object instanceof TraLiquidacionFechaCabecera)) {
             return false;
         }
-        TranLiquidacionFechaCabecera other = (TranLiquidacionFechaCabecera) object;
+        TraLiquidacionFechaCabecera other = (TraLiquidacionFechaCabecera) object;
         if ((this.lfcId == null && other.lfcId != null) || (this.lfcId != null && !this.lfcId.equals(other.lfcId))) {
             return false;
         }
