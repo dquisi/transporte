@@ -9,11 +9,12 @@
     <class>ups.edu.ec.entities.RRHH.TRAN_PERSONA</class>
     <class>ups.edu.ec.entities.RRHH.TRAN_TIPO_PERSONA</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/TRANSPORTE_DB"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/dbagenda"/>
       <property name="javax.persistence.jdbc.user" value="postgres"/>
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="manager"/>
+      <property name="javax.persistence.jdbc.password" value="postgres"/>
       <property name="javax.persistence.schema-generation.database.action" value="create"/>
+      <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
     </properties>
   </persistence-unit>
 </persistence>
