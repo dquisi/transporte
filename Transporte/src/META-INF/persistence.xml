@@ -2,19 +2,18 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="TransportePU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>ups.edu.ec.entities.contabilidadgeneral.Contabilidad_Retenciones</class>
-    <class>ups.edu.ec.entities.contabilidadgeneral.Numero_Egresos</class>
-    <class>ups.edu.ec.entities.contabilidadgeneral.Numero_Facturas</class>
-    <class>ups.edu.ec.entities.contabilidadgeneral.Numero_Guias</class>
-    <class>ups.edu.ec.entities.contabilidadgeneral.Numero_Ingresos</class>
-    <class>ups.edu.ec.entities.contabilidadgeneral.Numero_Liquidacion</class>
-    <class>ups.edu.ec.entities.contabilidadgeneral.Rutas</class>
+    <class>ups.edu.ec.entities.situacionInicial.Tracontacuentas</class>
+    <class>ups.edu.ec.entities.situacionInicial.Tracontatipocuenta</class>
+    <class>ups.edu.ec.entities.situacionInicial.Sequence</class>
+    <class>ups.edu.ec.entities.situacionInicial.Tracontanivel</class>
+    <class>ups.edu.ec.entities.situacionInicial.Tracontamayordetalles</class>
+    <class>ups.edu.ec.entities.situacionInicial.tra_tipo_cuentas</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/TRANSPORTE_DB"/>
-      <property name="javax.persistence.jdbc.user" value="postgres"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/TRANSPORTE_BD"/>
+      <property name="javax.persistence.jdbc.password" value="admin"/>
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="manager"/>
-      <property name="javax.persistence.schema-generation.database.action" value="create"/>
+      <property name="javax.persistence.jdbc.user" value="postgres"/>
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
     </properties>
   </persistence-unit>
 </persistence>
