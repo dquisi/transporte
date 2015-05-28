@@ -31,7 +31,7 @@ public class TraFacturaDetalle extends TraAuditoria implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TRA_FACTURA_DETALLE_SEQ")
-    @Column(name = "FDE_ID", nullable = false, unique = true)
+    @Column(name = "FDE_ID_PK", nullable = false, unique = true)
     private Long traFacturaDetID;
     
     @Column(name = "FDE_DESCRIPCION", length = 200)
