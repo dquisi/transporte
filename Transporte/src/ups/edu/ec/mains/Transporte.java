@@ -5,6 +5,10 @@
  */
 package ups.edu.ec.mains;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import ups.edu.ec.utils.JPA_UTILS;
+
 /**
  *
  * @author Bertha Tacuri
@@ -16,6 +20,8 @@ public class Transporte {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        EntityManagerFactory emf= JPA_UTILS.getEntitiMangerFactory();
+        EntityManager em = emf.createEntityManager();
     }
     
 }
