@@ -34,29 +34,38 @@ public class TranPersona implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "TRAN_PER_SEQ")
-    @Column(name = "PER_ID")
+    @Column(name = "PER_ID_PK",nullable = false,unique = true)
     private Long perId;
+    
     @Basic(optional = false)
-    @Column(name = "PER_CEDULA",nullable = false,length = 10)    
+    @Column(name = "PER_CEDULA",nullable = false,length = 10,unique = true)    
     private String perCedula;
-    @Column(name = "PER_NOMBRE")
+    
+    @Column(name = "PER_NOMBRE",length = 200)
     private String perNombre;
-    @Column(name = "PER_APELLIDO")
+    
+    @Column(name = "PER_APELLIDO",length = 200)
     private String perApellido;
+    
     @Column(name = "PER_FECHA_NACIMIENTO")
     @Temporal(TemporalType.DATE)
     private Date perFechaNac;
-    @Column(name = "PER_DIRECCION")
+    
+    @Column(name = "PER_DIRECCION",length = 400)
     private String perDireccion;
-    @Column(name = "PER_CELULAR")
+    
+    @Column(name = "PER_CELULAR",nullable = false,length = 10)
     private String perCelular;
-    @Column(name = "PER_TELEFONO")
+    
+    @Column(name = "PER_TELEFONO",length = 10)
     private String perTelefono;
+    
     //Relacion Persona_tipoPersona
-    @JoinColumn(name = "TPE_ID", referencedColumnName = "TPE_ID")
+    @JoinColumn(name = "TPE_ID_PK", referencedColumnName = "TPE_ID_PK")
     @ManyToOne(fetch = FetchType.LAZY)
+    
     //Realacion Persona_liqCabecera
-    @OneToMany(mappedBy = "PER_ID", fetch = FetchType.LAZY)    
+    @OneToMany(mappedBy = "PER_ID_PK", fetch = FetchType.LAZY)    
     
 
     @Override

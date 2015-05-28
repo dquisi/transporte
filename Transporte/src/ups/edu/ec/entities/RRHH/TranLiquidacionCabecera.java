@@ -32,26 +32,34 @@ public class TranLiquidacionCabecera implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "TRAN_LCA_SEQ")
-    @Column(name = "LCA_ID")
+    @Column(name = "LCA_ID_PK",nullable = false,unique = true)
     private Long lcaId;
-    @Column(name = "LCA_SENORES")
+    
+    @Column(name = "LCA_SENORES",length = 200)
     private String lcaSenores;
-    @Column(name = "LCA_DIRECCION")
+    
+    @Column(name = "LCA_DIRECCION",length = 400)
     private String lcaDireccion;
+    
     @Column(name = "LCA_FECHA_EMISION")
     @Temporal(TemporalType.DATE)
     private Date lcaFechaE;
-    @Column(name = "LCA_USUARIO")
+    
+    @Column(name = "LCA_USUARIO",length = 200)
     private String lcaUsuario;
+    
     @Column(name = "LCA_FECHA")
     @Temporal(TemporalType.DATE)
     private Date lcaFecha;
-    @Column(name = "LCA_ESTADDO")
+    
+    @Column(name = "LCA_ESTADDO",length = 10)
     private String lcaEstado;
+    
     //Relacion liqCabecera_liqDetalle
-    @OneToMany(mappedBy = "LCA_ID", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "LCA_ID_PK", fetch = FetchType.LAZY)
+    
     //Relacion liqCabecera_Persona
-    @JoinColumn(name = "PER_ID", referencedColumnName = "PER_ID")
+    @JoinColumn(name = "PER_ID_PK", referencedColumnName = "PER_ID_PK")
     @ManyToOne(fetch = FetchType.LAZY)
     
     

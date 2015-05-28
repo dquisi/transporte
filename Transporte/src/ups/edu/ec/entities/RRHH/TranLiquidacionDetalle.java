@@ -28,14 +28,17 @@ public class TranLiquidacionDetalle implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "TRAN_LDE_SEQ")
-    @Column(name = "LDE_ID")
+    @Column(name = "LDE_ID_PK",nullable = false,unique = true)
     private Long ldeId;
+    
     @Column(name = "LDE_SUBTOTAL",precision = 10,scale = 2)
     private double ldeSubtotal;
+    
     @Column(name = "LDE_TOTAL",precision = 10,scale = 2)
     private double ldeTotal;
+    
     //Realacion liqDetall_liqCabecera
-    @JoinColumn(name = "LCA_ID", referencedColumnName = "LCA_ID")
+    @JoinColumn(name = "LCA_ID_PK", referencedColumnName = "LCA_ID_PK")
     @ManyToOne(fetch = FetchType.LAZY)
     
     

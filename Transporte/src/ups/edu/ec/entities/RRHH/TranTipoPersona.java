@@ -28,12 +28,14 @@ public class TranTipoPersona implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "TRAN_TPE_SEQ")
-    @Column(name = "TPE_ID")
+    @Column(name = "TPE_ID_PK",nullable = false,unique = true)
     private Long tpeId;
-    @Column(name = "TPE_DESCRIPCION")
+    
+    @Column(name = "TPE_DESCRIPCION",length = 500)
     private String tpeDescripcion;
+    
     //Relacion
-    @OneToMany(mappedBy = "TPE_ID", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "TPE_ID_PK", fetch = FetchType.LAZY)
 
     public Long getId() {
         return tpeId;

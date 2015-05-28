@@ -30,44 +30,60 @@ public class TranLiquidacionFechaCabecera implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "TRAN_LFC_SEQ")
-    @Column(name = "LFC_ID")
+    @Column(name = "LFC_ID_PK",insertable = false,unique = true)
     private Long lfcId;
+    
     @Column(name = "LFC_FECHA")
     @Temporal(TemporalType.DATE)
     private Date lfcFecha;
+    
     @Column(name = "LFC_FECHA_ACT")
     @Temporal(TemporalType.DATE)
     private Date lfcFechaAct;
-    @Column(name = "LFC_PERSONA")
+    
+    @Column(name = "LFC_PERSONA",length = 300)
     private String lfcPersona;
-    @Column(name = "LFC_NUMERO")
+    @Column(name = "LFC_NUMERO",precision = 10)
     private int lfcNumero;
+    
     @Column(name = "LFC_SALDO_COBRADO",precision = 10, scale = 2)
     private double lfcSaldoCob;
+    
     @Column(name = "LFC_SALDO_PAGADO",precision = 10, scale = 2)
     private double lfcSaldoPag;
+    
     @Column(name = "LFC_TOTAL_FLETE",precision = 10, scale = 2)
     private double lfcTotalFlete;        
+    
     @Column(name = "LFC_RETENCION",precision = 10, scale = 2)
     private double lfcRetencion;
+    
     @Column(name = "LFC_COBRO_RUTA",precision = 10, scale = 2)
     private double lfcCobroRut;
+    
     @Column(name = "LFC_COBRO_CUENCA",precision = 10, scale = 2)
     private double lfcCobroCuenca;
+    
     @Column(name = "LFC_TOTAL_PAGO",precision = 10, scale = 2)
     private double lfcTotalPag;
+    
     @Column(name = "LFC_LIDUIDACION1",precision = 8, scale = 2)
     private double lfcLiquidacion1;
+    
     @Column(name = "LFC_LIDUIDACION2",precision = 8, scale = 2)
     private double lfcLiquidacion2;
+    
     @Column(name = "LFC_DESCUENTO1",precision = 8, scale = 2)
     private String lfcDescuento1;
+    
     @Column(name = "LFC_DESCUENTO2",precision = 8, scale = 2)
     private String lfcDescuento2;
-    @Column(name = "LFC_ESTADO")
+    
+    @Column(name = "LFC_ESTADO",length = 10)
     private String lfcEstado;
+    
     //Relacion
-    @OneToMany(mappedBy = "LFC_ID", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "LFC_ID_PK", fetch = FetchType.LAZY)
 
     
 

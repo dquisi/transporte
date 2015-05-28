@@ -31,37 +31,51 @@ public class TranLiquidacionFechaDetalle implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE ,generator = "TRAN_LFD_SEQ")
-    @Column(name = "LFCD_ID")
+    @Column(name = "LFCD_ID_PK",insertable = false,unique = true)
     private Long lfdId;
+    
     @Column(name = "LFD_FECHA")
     @Temporal(TemporalType.DATE)
     private Date lfdFecha;
-    @Column(name = "LFD_NUM_GUIA")
+    
+    @Column(name = "LFD_NUM_GUIA",precision = 100)
     private double lfdNumGuia;
+    
     @Column(name = "LFD_PAGO",precision = 10,scale = 2)
     private double lfdPago;
+    
     @Column(name = "LFD_COBRO_RUTA",precision = 10,scale = 2)
     private double lfdCobroRuta;
+    
     @Column(name = "LFD_COBRO_CUENCA",precision = 10,scale = 2)
     private double lfdNumCuenca;
+    
     @Column(name = "LFD_TOTAL_FLETE",precision = 10,scale = 2)
     private double lfdToatlFlete;
+    
     @Column(name = "LFD_PORCENTAJE_15O12",precision = 10,scale = 2)
     private double lfdPorcentaje1512;
+    
     @Column(name = "LFD_TOTAL_LIQUIDACION",precision = 10,scale = 2)
     private double lfdTotalLiquidacion;
+    
     @Column(name = "LFD_RETENCION_PORCENTAJE",precision = 10,scale = 2)
     private double lfdRetencionPor;
+    
     @Column(name = "LFD_LIQUIDACION1",precision = 10,scale = 2)
     private double lfdLiquidacion1;
+    
     @Column(name = "LFD_LIQUIDACION2",precision = 10,scale = 2)
     private double lfdLiquidacion2;
-    @Column(name = "LFD_DESCUENTO1")
+    
+    @Column(name = "LFD_DESCUENTO1",length = 5)
     private String lfdDescuento1;
-    @Column(name = "LFD_DESCUENTO2")
+    
+    @Column(name = "LFD_DESCUENTO2",length = 5)
     private String lfdDescuento2;
+    
     //Relacion
-    @JoinColumn(name = "LFC_ID", referencedColumnName = "LFC_ID")
+    @JoinColumn(name = "LFC_ID_PK", referencedColumnName = "LFC_ID_PK")
     @ManyToOne(fetch = FetchType.LAZY)
 
     
