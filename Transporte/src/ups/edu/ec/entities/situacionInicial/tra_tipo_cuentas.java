@@ -25,7 +25,7 @@ public class tra_tipo_cuentas implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TRA_TIPO_CUENTAS_SEQ")
-    @Column(name = "TICU_ID")
+    @Column(name = "TICU_ID_PK")
     private Long id;
     @Column(name = "TICU_DESCRIPCION")
     private  String ticuDescripcion;

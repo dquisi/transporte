@@ -28,7 +28,7 @@ public class tra_conta_mayor_detalles implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TRA_CONTA_MAYOR_DETALLES_SEQ")
-    @Column(name = "COMADE_ID")
+    @Column(name = "COMADE_ID_PK")
     private Long id;
     @Column(name = "COMADE_FECHA")
     @Temporal(TemporalType.DATE)

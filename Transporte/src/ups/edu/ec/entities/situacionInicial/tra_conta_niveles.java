@@ -25,7 +25,7 @@ public class tra_conta_niveles implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TRA_CONTA_NIVELES_SEQ")
-     @Column(name = "CONI_ID")
+     @Column(name = "CONI_ID_PK")
     private Long id;
     @Column(name = "CONI_VALOR")
     private double coniValor;
