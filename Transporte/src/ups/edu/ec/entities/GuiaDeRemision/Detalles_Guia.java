@@ -15,6 +15,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import ups.edu.ec.entities.Abstract.TraAuditoria;
 
 /**
  *
@@ -23,14 +24,14 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "TRA_DETALLES_GUIA")
 @SequenceGenerator(name = "TRA_DETALLES_GUIA_SEQ", sequenceName = "TRA_DETALLES_GUIA_SEQ", initialValue = 1, allocationSize = 1)
-public class Detalles_Guia implements Serializable {
+public class Detalles_Guia extends TraAuditoria implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TRA_HOJA_RUTA_CABECERA_SEQ")
-    @Column(name="DGU_ID_PK")
+    @Column(name="DGU_ID_PK",nullable = false, unique = true)
     private Long dgu_id_pk;
 
-    @Column(name="DGU_CANTIDAD")
+    @Column(name="DGU_CANTIDAD" )
     private double dgu_cantidad;
     
     @Column(name="DGU_UNIDAD")    

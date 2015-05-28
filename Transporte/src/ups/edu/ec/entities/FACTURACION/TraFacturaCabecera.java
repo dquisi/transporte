@@ -32,7 +32,7 @@ public class TraFacturaCabecera extends TraAuditoria implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TRA_FACTURA_CABECERA_SEQ")
-    @Column(name = "FCA_ID", nullable = false, unique = true)
+    @Column(name = "FCA_ID_PK", nullable = false, unique = true)
     private Long traFacturaCabID;
 
     @Column(name = "FCA_FECHA")

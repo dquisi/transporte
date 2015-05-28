@@ -16,6 +16,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import ups.edu.ec.entities.Abstract.TraAuditoria;
 
 /**
  *
@@ -24,11 +25,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "TRA_GUIA_REMISION_CABECERA")
 @SequenceGenerator(name = "TRA_GUIA_REMISION_CABECERA_SEQ", sequenceName = "TRA_GUIA_REMISION_CABECERA_SEQ", initialValue = 1, allocationSize = 1)
-public class Guia_Remision_Cabecera implements Serializable {
+public class Guia_Remision_Cabecera extends TraAuditoria implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TRA_GUIA_REMISION_CABECERA_SEQ")
-    @Column(name="GRC_ID_PK")
+    @Column(name="GRC_ID_PK",nullable = false, unique = true)
     private Long grc_id_pk;
 
     @Column(name="GRC_NUMERO")
