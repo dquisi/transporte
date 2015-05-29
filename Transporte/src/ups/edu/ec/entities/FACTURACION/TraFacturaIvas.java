@@ -32,10 +32,10 @@ public class TraFacturaIvas extends TraAuditoria implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TRA_FACTURA_IVA_SEQ")
-    @Column(name = "FIV_ID_PK", nullable = false, unique = true)
+    @Column(name = "FIV", nullable = false, unique = true)
     private Long traFacturaIvasID;
 
-    @Column(name = "FIV_VALOR", nullable = false, precision = 2, length = 2)
+    @Column(name = "FIV", nullable = false, precision = 2, length = 2)
     private int traFacturaIvasValor;
     
     // Relaciones PRIMARY KEY
