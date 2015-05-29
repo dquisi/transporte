@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ups.edu.ec.entites.security;
+package ups.edu.ec.entities.security;
 
 import java.io.Serializable;
 import java.util.List;

@@ -7,7 +7,7 @@ package ups.edu.ec.daos.security;
 
 import javax.persistence.EntityManager;
 import ups.edu.ec.daos.Abstract.AbstractDAO;
-import ups.edu.ec.entites.security.TraSeccion;
+import ups.edu.ec.entities.security.TraSeccion;
 
 /**
  *

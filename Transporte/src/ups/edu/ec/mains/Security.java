@@ -16,13 +16,13 @@ import ups.edu.ec.daos.security.SeccionDAO;
 import ups.edu.ec.daos.security.TipoSeccionDAO;
 import ups.edu.ec.daos.security.UseRolDAO;
 import ups.edu.ec.daos.security.UsuarioDAO;
-import ups.edu.ec.entites.security.TraOperacion;
-import ups.edu.ec.entites.security.TraPermiso;
-import ups.edu.ec.entites.security.TraRol;
-import ups.edu.ec.entites.security.TraSeccion;
-import ups.edu.ec.entites.security.TraTipoSeccion;
-import ups.edu.ec.entites.security.TraUsuario;
-import ups.edu.ec.entites.security.TraUsuarioRol;
+import ups.edu.ec.entities.security.TraOperacion;
+import ups.edu.ec.entities.security.TraPermiso;
+import ups.edu.ec.entities.security.TraRol;
+import ups.edu.ec.entities.security.TraSeccion;
+import ups.edu.ec.entities.security.TraTipoSeccion;
+import ups.edu.ec.entities.security.TraUsuario;
+import ups.edu.ec.entities.security.TraUsuarioRol;
 
 /**
  *
@@ -43,46 +43,46 @@ public class Security {
         SeccionDAO seccionDAO=new SeccionDAO(em);
         
 //        for (int i = 0; i < 50; i++){
-            TraUsuario usuario = new TraUsuario();
-            usuario.setNombreUsuario("usr_PEP");
-            usuario.setClaveUsuario("pep");
-            usuarioDAO.create(usuario);
+//            TraUsuario usuario = new TraUsuario();
+//            usuario.setNombreUsuario("usr_PEP");
+//            usuario.setClaveUsuario("pep");
+//            usuarioDAO.create(usuario);
+////            
+//            TraRol rol = new TraRol();
+//            rol.setRolDescripción("CONT");
+//            rolDAO.create(rol);
+////            
+//            TraUsuarioRol usuarioRol=new TraUsuarioRol();
+//            usuarioRol.setUsuario(usuario);
+//            usuarioRol.setRol(rol);
+//            usuarioRolDAO.create(usuarioRol);
 //            
-            TraRol rol = new TraRol();
-            rol.setRolDescripción("CONT");
-            rolDAO.create(rol);
-//            
-            TraUsuarioRol usuarioRol=new TraUsuarioRol();
-            usuarioRol.setUsuario(usuario);
-            usuarioRol.setRol(rol);
-            usuarioRolDAO.create(usuarioRol);
-            
-            TraOperacion tranOperacion=new TraOperacion();
-            tranOperacion.setOpeDescripcion("Lectura");
-            operacionDAO.create(tranOperacion);
-        
-              TraTipoSeccion tranTipoSeccion=new TraTipoSeccion();
-              tranTipoSeccion.setTisDescripcion("Ventana");
-              tranTipoSeccion.setTisNivel("1");
-              tipoSeccionDAO.create(tranTipoSeccion);
-              
-              TraSeccion tranSeccion=new TraSeccion();
-              tranSeccion.setSecDescripcion("Facturacion");
-              tranSeccion.setSecNombreClave("FAC");
-              tranSeccion.setSecEtiqueta("FActuracion del Cliente");
-              tranSeccion.setSecOrden(1);
-              tranSeccion.setSecRuta("www");
-              tranSeccion.setSecPagina("pagina1");
-              tranSeccion.setTranTipoSeccion(tranTipoSeccion);
-              seccionDAO.create(tranSeccion);
-              
-//            
-            TraPermiso tranPermiso=new TraPermiso();
-            tranPermiso.setDesPermiso("Todo");
-            tranPermiso.setTranRol(rol);
-            tranPermiso.setTranOperacion(tranOperacion);
-            tranPermiso.setTranSeccion(tranSeccion);
-            permisoDAO.create(tranPermiso);
+//            TraOperacion tranOperacion=new TraOperacion();
+//            tranOperacion.setOpeDescripcion("Lectura");
+//            operacionDAO.create(tranOperacion);
+//        
+//              TraTipoSeccion tranTipoSeccion=new TraTipoSeccion();
+//              tranTipoSeccion.setTisDescripcion("Ventana");
+//              tranTipoSeccion.setTisNivel("1");
+//              tipoSeccionDAO.create(tranTipoSeccion);
+//              
+//              TraSeccion tranSeccion=new TraSeccion();
+//              tranSeccion.setSecDescripcion("Facturacion");
+//              tranSeccion.setSecNombreClave("FAC");
+//              tranSeccion.setSecEtiqueta("FActuracion del Cliente");
+//              tranSeccion.setSecOrden(1);
+//              tranSeccion.setSecRuta("www");
+//              tranSeccion.setSecPagina("pagina1");
+//              tranSeccion.setTranTipoSeccion(tranTipoSeccion);
+//              seccionDAO.create(tranSeccion);
+//              
+////            
+//            TraPermiso tranPermiso=new TraPermiso();
+//            tranPermiso.setDesPermiso("Todo");
+//            tranPermiso.setTranRol(rol);
+//            tranPermiso.setTranOperacion(tranOperacion);
+//            tranPermiso.setTranSeccion(tranSeccion);
+//            permisoDAO.create(tranPermiso);
             
             
             
