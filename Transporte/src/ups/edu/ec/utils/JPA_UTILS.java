@@ -17,7 +17,7 @@ public class JPA_UTILS {
     
     public static EntityManagerFactory getEntitiMangerFactory(){
         if(emf == null){
-            emf = Persistence.createEntityManagerFactory("TransportePU");
+            emf = Persistence.createEntityManagerFactory("TRANSPORTE_PU");
         }
         return emf;
     }

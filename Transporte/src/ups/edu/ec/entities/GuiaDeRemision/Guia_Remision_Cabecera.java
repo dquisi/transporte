@@ -16,6 +16,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import ups.edu.ec.entities.Abstract.TraAuditoria;
 
 /**
  *
@@ -24,41 +27,43 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "TRA_GUIA_REMISION_CABECERA")
 @SequenceGenerator(name = "TRA_GUIA_REMISION_CABECERA_SEQ", sequenceName = "TRA_GUIA_REMISION_CABECERA_SEQ", initialValue = 1, allocationSize = 1)
-public class Guia_Remision_Cabecera implements Serializable {
+public class Guia_Remision_Cabecera extends TraAuditoria implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TRA_GUIA_REMISION_CABECERA_SEQ")
-    @Column(name="GRC_ID_PK")
+    @Column(name="GRC_ID_PK",nullable = false,unique = true)
     private Long grc_id_pk;
 
     @Column(name="GRC_NUMERO")
     private Long grc_numero;
 
+    @Temporal(TemporalType.DATE)
     @Column(name="GRC_FECHA_INICIO_TRASLADO")
     private Date grc_fechaInicioTraslado;
 
-    @Column(name="GRC_FECHA_FIN_TRASLADO")    
-    private Date grc_fechaFinTraslado;
+    @Column(name="GRC_FECHA_FIN_TRASLADO", length = 20)    
+    private String grc_fechaFinTraslado;
     
-    @Column(name="GRC_COMPONENTE_VENTA")    
+    @Column(name="GRC_COMPONENTE_VENTA", length = 50)    
     private String grc_componenteVenta;
 
-    @Column(name="GRC_FECHA_EMISION")    
+    @Column(name="GRC_FECHA_EMISION", length = 20)    
     private String grc_fechaEmision;
 
-    @Column(name="GRC_SUBTOTAL")    
+    @Column(name="GRC_SUBTOTAL", precision = 10, scale = 2)    
     private String grc_subtotal;
 
-    @Column(name="GRC_TOTAL_CON_IVA")
+    @Column(name="GRC_TOTAL_CON_IVA", precision = 10, scale = 2)
     private String grc_totalConIva;
 
-    @Column(name="GRC_USUARIO")    
+    @Column(name="GRC_USUARIO",length = 100)    
     private String grc_usuario;
 
+    @Temporal(TemporalType.DATE)
     @Column(name="GRC_FECHA")    
     private Date grc_fecha;
     
-    @Column(name="GRC_ESTADO")    
+    @Column(name="GRC_ESTADO", length = 100)    
     private String grc_estado;
 
     @ManyToOne
@@ -100,11 +105,11 @@ public class Guia_Remision_Cabecera implements Serializable {
         this.grc_fechaInicioTraslado = grc_fechaInicioTraslado;
     }
 
-    public Date getGrc_fechaFinTraslado() {
+    public String getGrc_fechaFinTraslado() {
         return grc_fechaFinTraslado;
     }
 
-    public void setGrc_fechaFinTraslado(Date grc_fechaFinTraslado) {
+    public void setGrc_fechaFinTraslado(String grc_fechaFinTraslado) {
         this.grc_fechaFinTraslado = grc_fechaFinTraslado;
     }
 

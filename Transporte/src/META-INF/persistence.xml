@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-  <persistence-unit name="TransportePU" transaction-type="RESOURCE_LOCAL">
+  <persistence-unit name="TRANSPORTE_PU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>ups.edu.ec.entities.FACTURACION.TraFacturaCabecera</class>
+    <class>ups.edu.ec.entities.ContabilidadEgresos.TraBancos</class>
+    <class>ups.edu.ec.entities.ContabilidadEgresos.TraChequeCabecera</class>
+    <class>ups.edu.ec.entities.ContabilidadEgresos.TraChequeDetalle</class>
+    <class>ups.edu.ec.entities.ContabilidadEgresos.TraComprobanteCabecera</class>
+    <class>ups.edu.ec.entities.ContabilidadEgresos.TraComprobanteDetalle</class>
+    <class>ups.edu.ec.entities.ContabilidadIngresos.TraIngresoDetalles</class>
+    <class>ups.edu.ec.entities.ContabilidadIngresos.TraIngresosCabecera</class>
     <class>ups.edu.ec.entities.FACTURACION.TraFacturaDetalle</class>
     <class>ups.edu.ec.entities.FACTURACION.TraFacturaEstado</class>
-    <class>ups.edu.ec.entities.FACTURACION.TraFacturaIvas</class>
+    <class>ups.edu.ec.entities.FACTURACION.TraFacturaTipoPagoCobro</class>
+    <class>ups.edu.ec.entities.GuiaDeRemision.Detalles_Guia</class>
+    <class>ups.edu.ec.entities.GuiaDeRemision.Guia_Remision_Cabecera</class>
+    <class>ups.edu.ec.entities.GuiaDeRemision.Lugares</class>
+    <class>ups.edu.ec.entities.GuiaDeRemision.Motivo_Traslados</class>
+    <class>ups.edu.ec.entities.GuiaDeRemision.Tipo_Lugares</class>
+    <class>ups.edu.ec.entities.HojaDeRuta.Hoja_Ruta_Cabecera</class>
+    <class>ups.edu.ec.entities.HojaDeRuta.Hoja_Ruta_Detalle</class>
+    <class>ups.edu.ec.entities.RRHH.TraLiquidacionCabecera</class>
+    <class>ups.edu.ec.entities.RRHH.TraLiquidacionDetalle</class>
+    <class>ups.edu.ec.entities.RRHH.TraLiquidacionFechaCabecera</class>
+    <class>ups.edu.ec.entities.RRHH.TraLiquidacionFechaDetalle</class>
+    <class>ups.edu.ec.entities.RRHH.TraPersona</class>
+    <class>ups.edu.ec.entities.RRHH.TraTipoPersona</class>
     <class>ups.edu.ec.entities.contabilidadgeneral.Contabilidad_Retenciones</class>
     <class>ups.edu.ec.entities.contabilidadgeneral.Numero_Egresos</class>
     <class>ups.edu.ec.entities.contabilidadgeneral.Numero_Facturas</class>
@@ -13,14 +32,17 @@
     <class>ups.edu.ec.entities.contabilidadgeneral.Numero_Ingresos</class>
     <class>ups.edu.ec.entities.contabilidadgeneral.Numero_Liquidacion</class>
     <class>ups.edu.ec.entities.contabilidadgeneral.Rutas</class>
+    <class>ups.edu.ec.entities.situacionInicial.tra_conta_cuenta</class>
+    <class>ups.edu.ec.entities.situacionInicial.tra_conta_mayor_detalles</class>
+    <class>ups.edu.ec.entities.situacionInicial.tra_conta_niveles</class>
     <class>ups.edu.ec.entities.situacionInicial.tra_tipo_cuentas</class>
-    <class>ups.edu.ec.entities.FACTURACION.TraTipoPagoCobro</class>
     <properties>
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/TRANSPORTE_DB"/>
-      <property name="javax.persistence.jdbc.user" value="postgres"/>
+      <property name="javax.persistence.jdbc.password" value="Jmartinezg1989*"/>
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="manager"/>
-      <property name="javax.persistence.schema-generation.database.action" value="create"/>
+      <property name="javax.persistence.jdbc.user" value="postgres"/>
+      <property name="eclipselink.ddl-generation" value="create-tables"/>
     </properties>
   </persistence-unit>
 </persistence>

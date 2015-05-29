@@ -19,8 +19,7 @@ public class Transporte {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        EntityManagerFactory emf= JPA_UTILS.getEntitiMangerFactory();
+        EntityManagerFactory emf = JPA_UTILS.getEntitiMangerFactory();
         EntityManager em = emf.createEntityManager();
     }
     
