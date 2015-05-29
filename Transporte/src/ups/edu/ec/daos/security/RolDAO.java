@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ups.edu.ec.utils.security.daos;
+package ups.edu.ec.daos.security;
 
 import javax.persistence.EntityManager;
 import ups.edu.ec.daos.Abstract.AbstractDAO;
-import ups.edu.ec.utils.security.entities.Rol;
+import ups.edu.ec.entites.security.TraRol;
 
 /**
  *
@@ -16,7 +16,7 @@ import ups.edu.ec.utils.security.entities.Rol;
 public class RolDAO extends AbstractDAO {
     private EntityManager em;
     public RolDAO(EntityManager em) {
-        super(Rol.class, em);
+        super(TraRol.class, em);
         this.em=em;
         
     }

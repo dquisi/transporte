@@ -3,20 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ups.edu.ec.utils.security.daos;
+package ups.edu.ec.daos.security;
 
 import javax.persistence.EntityManager;
 import ups.edu.ec.daos.Abstract.AbstractDAO;
-import ups.edu.ec.utils.security.entities.UsuarioRol;
+import ups.edu.ec.entites.security.TraOperacion;
 
 /**
  *
  * @author asissistemas
  */
-public class UseRolDAO extends AbstractDAO{
+public class OperacionDAO extends AbstractDAO{
 EntityManager em;
-    public UseRolDAO(EntityManager em) {
-        super(UsuarioRol.class, em);
+    public OperacionDAO(EntityManager em) {
+        super(TraOperacion.class, em);
         this.em=em;
     }
     
