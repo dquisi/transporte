@@ -8,11 +8,16 @@ package ups.edu.ec.entities.FACTURACION;
 import ups.edu.ec.entities.Abstract.TraAuditoria;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -80,6 +85,58 @@ public class TraFacturaCabecera extends TraAuditoria implements Serializable {
     @Column(name = "FCA_CONCEPTO", length = 200)
     private String traFacturaCabConcepto;
 
+    // Relaciones PRIMARY KEY
+    // Relacion FacturaCabecera_FacturaDetalle
+    @OneToMany(mappedBy = "FCA_ID_PK", fetch = FetchType.LAZY)
+    public List<TraFacturaDetalle> traFacturaDetalleList;
+    
+    // Relacion FacturaCabecera_FacturaEstado
+    @OneToMany(mappedBy = "FCA_ID_PK", fetch = FetchType.LAZY)
+    public List<TraFacturaEstado> traFacturaEstadoList;
+    
+    // Relaciones FOREIGN KEY
+    // Foreign_Key TipoPagoCobro_FacturaCabecera
+    @ManyToOne
+    @JoinColumn(name = "TPCO_FCA_FK", referencedColumnName = "TPCO_ID_PK")
+    private TraTipoPagoCobro traTipoPagoCobro;
+    
+    // Foreign_key FacturaIvas_FacturaCabecera
+    @ManyToOne
+    @JoinColumn(name = "FIV_FCA_FK", referencedColumnName = "FIV_ID_PK")
+    private TraFacturaIvas traFacturaIvas;
+
+    public List<TraFacturaDetalle> getTraFacturaDetalleList() {
+        return traFacturaDetalleList;
+    }
+
+    public void setTraFacturaDetalleList(List<TraFacturaDetalle> traFacturaDetalleList) {
+        this.traFacturaDetalleList = traFacturaDetalleList;
+    }
+
+    public List<TraFacturaEstado> getTraFacturaEstadoList() {
+        return traFacturaEstadoList;
+    }
+
+    public void setTraFacturaEstadoList(List<TraFacturaEstado> traFacturaEstadoList) {
+        this.traFacturaEstadoList = traFacturaEstadoList;
+    }
+
+    public TraTipoPagoCobro getTraTipoPagoCobro() {
+        return traTipoPagoCobro;
+    }
+
+    public void setTraTipoPagoCobro(TraTipoPagoCobro traTipoPagoCobro) {
+        this.traTipoPagoCobro = traTipoPagoCobro;
+    }
+
+    public TraFacturaIvas getTraFacturaIvas() {
+        return traFacturaIvas;
+    }
+
+    public void setTraFacturaIvas(TraFacturaIvas traFacturaIvas) {
+        this.traFacturaIvas = traFacturaIvas;
+    }
+    
     public Date getTraFacturaCabFecha() {
         return traFacturaCabFecha;
     }

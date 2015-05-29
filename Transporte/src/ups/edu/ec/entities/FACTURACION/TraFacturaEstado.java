@@ -12,6 +12,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -37,6 +39,19 @@ public class TraFacturaEstado extends TraAuditoria implements Serializable {
     @Column(name = "FES_DESCRIPCION", nullable = false, length = 50)
     private String traFacturaEstDescripcion;
 
+    // Foreign_Key FacturaCabecera_FacturaEstado
+    @ManyToOne
+    @JoinColumn(name = "FCA_FES_FK", referencedColumnName = "FCA_ID_PK")
+    private TraFacturaCabecera traFacturaCabecera;
+
+    public TraFacturaCabecera getTraFacturaCabecera() {
+        return traFacturaCabecera;
+    }
+
+    public void setTraFacturaCabecera(TraFacturaCabecera traFacturaCabecera) {
+        this.traFacturaCabecera = traFacturaCabecera;
+    }
+    
     public String getTraFacturaEstDescripcion() {
         return traFacturaEstDescripcion;
     }
