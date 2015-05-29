@@ -20,6 +20,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -37,12 +39,14 @@ public class TraFacturaCabecera extends TraAuditoria implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TRA_FACTURA_CABECERA_SEQ")
-    @Column(name = "FCA_ID", nullable = false, unique = true)
+    @Column(name = "FCA_ID_PK", nullable = false, unique = true)
     private Long traFacturaCabID;
 
+    @Temporal(TemporalType.DATE)
     @Column(name = "FCA_FECHA")
     private Date traFacturaCabFecha;
     
+    @Temporal(TemporalType.DATE)
     @Column(name = "FCA_FECHA_FAC")
     private Date traFacturaCabFecha2;
     
@@ -87,23 +91,23 @@ public class TraFacturaCabecera extends TraAuditoria implements Serializable {
 
     // Relaciones PRIMARY KEY
     // Relacion FacturaCabecera_FacturaDetalle
-    @OneToMany(mappedBy = "FCA_ID_PK", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "FCA_FDE_FK", fetch = FetchType.LAZY)
     public List<TraFacturaDetalle> traFacturaDetalleList;
     
     // Relacion FacturaCabecera_FacturaEstado
-    @OneToMany(mappedBy = "FCA_ID_PK", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "FCA_FES_FK", fetch = FetchType.LAZY)
     public List<TraFacturaEstado> traFacturaEstadoList;
     
     // Relaciones FOREIGN KEY
     // Foreign_Key TipoPagoCobro_FacturaCabecera
     @ManyToOne
-    @JoinColumn(name = "TPCO_FCA_FK", referencedColumnName = "TPCO_ID_PK")
-    private TraTipoPagoCobro traTipoPagoCobro;
+    @JoinColumn(name = "TPCO_ID_PK", referencedColumnName = "TPCO_ID_PK")
+    private TraFacturaTipoPagoCobro TPCO_FCA_FK;
     
     // Foreign_key FacturaIvas_FacturaCabecera
     @ManyToOne
-    @JoinColumn(name = "FIV_FCA_FK", referencedColumnName = "FIV_ID_PK")
-    private TraFacturaIvas traFacturaIvas;
+    @JoinColumn(name = "FIV_ID_PK", referencedColumnName = "FIV_ID_PK")
+    private TraFacturaIvas FIV_FCA_FK;
 
     public List<TraFacturaDetalle> getTraFacturaDetalleList() {
         return traFacturaDetalleList;
@@ -121,20 +125,20 @@ public class TraFacturaCabecera extends TraAuditoria implements Serializable {
         this.traFacturaEstadoList = traFacturaEstadoList;
     }
 
-    public TraTipoPagoCobro getTraTipoPagoCobro() {
-        return traTipoPagoCobro;
+    public TraFacturaTipoPagoCobro getTPCO_FCA_FK() {
+        return TPCO_FCA_FK;
     }
 
-    public void setTraTipoPagoCobro(TraTipoPagoCobro traTipoPagoCobro) {
-        this.traTipoPagoCobro = traTipoPagoCobro;
+    public void setTPCO_FCA_FK(TraFacturaTipoPagoCobro TPCO_FCA_FK) {
+        this.TPCO_FCA_FK = TPCO_FCA_FK;
     }
 
-    public TraFacturaIvas getTraFacturaIvas() {
-        return traFacturaIvas;
+    public TraFacturaIvas getFIV_FCA_FK() {
+        return FIV_FCA_FK;
     }
 
-    public void setTraFacturaIvas(TraFacturaIvas traFacturaIvas) {
-        this.traFacturaIvas = traFacturaIvas;
+    public void setFIV_FCA_FK(TraFacturaIvas FIV_FCA_FK) {
+        this.FIV_FCA_FK = FIV_FCA_FK;
     }
     
     public Date getTraFacturaCabFecha() {

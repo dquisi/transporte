@@ -13,7 +13,6 @@
     <class>ups.edu.ec.entities.FACTURACION.TraFacturaDetalle</class>
     <class>ups.edu.ec.entities.FACTURACION.TraFacturaEstado</class>
     <class>ups.edu.ec.entities.FACTURACION.TraFacturaIvas</class>
-    <class>ups.edu.ec.entities.FACTURACION.TraTipoPagoCobro</class>
     <class>ups.edu.ec.entities.GuiaDeRemision.Detalles_Guia</class>
     <class>ups.edu.ec.entities.GuiaDeRemision.Guia_Remision_Cabecera</class>
     <class>ups.edu.ec.entities.GuiaDeRemision.Lugares</class>
@@ -38,11 +37,12 @@
     <class>ups.edu.ec.entities.situacionInicial.tra_conta_mayor_detalles</class>
     <class>ups.edu.ec.entities.situacionInicial.tra_conta_niveles</class>
     <class>ups.edu.ec.entities.situacionInicial.tra_tipo_cuentas</class>
+    <class>ups.edu.ec.entities.FACTURACION.TraFacturaTipoPagoCobro</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/TRANSPORTE_DB"/>
-      <property name="javax.persistence.jdbc.user" value="postgres"/>
-      <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
       <property name="javax.persistence.jdbc.password" value="manager"/>
+      <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+      <property name="javax.persistence.jdbc.user" value="postgres"/>
       <property name="javax.persistence.schema-generation.database.action" value="create"/>
     </properties>
   </persistence-unit>

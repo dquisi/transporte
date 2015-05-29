@@ -51,15 +51,15 @@ public class TraFacturaDetalle  extends TraAuditoria implements Serializable {
     // Relaciones FOREIGN KEY
     // Foreign_Key FacturaCabecera_FacturaDetalle
     @ManyToOne
-    @JoinColumn(name = "FCA_FDE_FK", referencedColumnName = "FCA_ID_PK")
-    private TraFacturaCabecera traFacturaCabecera;
+    @JoinColumn(name = "FCA_ID_PK", referencedColumnName = "FCA_ID_PK")
+    private TraFacturaCabecera FCA_FDE_FK;
 
-    public TraFacturaCabecera getTraFacturaCabecera() {
-        return traFacturaCabecera;
+    public TraFacturaCabecera getFCA_FDE_FK() {
+        return FCA_FDE_FK;
     }
 
-    public void setTraFacturaCabecera(TraFacturaCabecera traFacturaCabecera) {
-        this.traFacturaCabecera = traFacturaCabecera;
+    public void setFCA_FDE_FK(TraFacturaCabecera FCA_FDE_FK) {
+        this.FCA_FDE_FK = FCA_FDE_FK;
     }
     
     public String getTraFacturaDetDescripcion() {

@@ -33,7 +33,7 @@ public class TraFacturaEstado extends TraAuditoria implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TRA_FACTURA_ESTADO_SEQ")
-    @Column(name = "FES_ID", nullable = false, unique = true)
+    @Column(name = "FES_ID_PK", nullable = false, unique = true)
     private Long traFacturaEstID;
 
     @Column(name = "FES_DESCRIPCION", nullable = false, length = 50)
@@ -41,15 +41,15 @@ public class TraFacturaEstado extends TraAuditoria implements Serializable {
 
     // Foreign_Key FacturaCabecera_FacturaEstado
     @ManyToOne
-    @JoinColumn(name = "FCA_FES_FK", referencedColumnName = "FCA_ID_PK")
-    private TraFacturaCabecera traFacturaCabecera;
+    @JoinColumn(name = "FCA_ID_PK", referencedColumnName = "FCA_ID_PK")
+    private TraFacturaCabecera FCA_FES_FK;
 
-    public TraFacturaCabecera getTraFacturaCabecera() {
-        return traFacturaCabecera;
+    public TraFacturaCabecera getFCA_FES_FK() {
+        return FCA_FES_FK;
     }
 
-    public void setTraFacturaCabecera(TraFacturaCabecera traFacturaCabecera) {
-        this.traFacturaCabecera = traFacturaCabecera;
+    public void setFCA_FES_FK(TraFacturaCabecera FCA_FES_FK) {
+        this.FCA_FES_FK = FCA_FES_FK;
     }
     
     public String getTraFacturaEstDescripcion() {
