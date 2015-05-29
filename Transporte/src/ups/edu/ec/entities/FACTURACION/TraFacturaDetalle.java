@@ -12,6 +12,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -25,7 +27,7 @@ import javax.persistence.Table;
 @Table(name = "TRA_FACTURA_DETALLE")
 @SequenceGenerator(name = "TRA_FACTURA_DETALLE_SEQ", sequenceName = "TRA_FACTURA_DETALLE_SEQ", initialValue = 1, allocationSize = 1)
 
-public class TraFacturaDetalle extends TraAuditoria implements Serializable {
+public class TraFacturaDetalle  extends TraAuditoria implements Serializable {
     // Atributos mapeados con su respectivo nombre
     // para la creacion de campos de la BD
     private static final long serialVersionUID = 1L;
@@ -46,6 +48,20 @@ public class TraFacturaDetalle extends TraAuditoria implements Serializable {
     @Column(name = "FDE_VAL_TOTAL", precision = 10 , scale = 2)
     private Long traFacturaDetValTot;
 
+    // Relaciones FOREIGN KEY
+    // Foreign_Key FacturaCabecera_FacturaDetalle
+    @ManyToOne
+    @JoinColumn(name = "FCA_FDE_FK", referencedColumnName = "FCA_ID_PK")
+    private TraFacturaCabecera traFacturaCabecera;
+
+    public TraFacturaCabecera getTraFacturaCabecera() {
+        return traFacturaCabecera;
+    }
+
+    public void setTraFacturaCabecera(TraFacturaCabecera traFacturaCabecera) {
+        this.traFacturaCabecera = traFacturaCabecera;
+    }
+    
     public String getTraFacturaDetDescripcion() {
         return traFacturaDetDescripcion;
     }

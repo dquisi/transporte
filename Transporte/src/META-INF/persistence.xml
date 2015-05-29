@@ -6,7 +6,6 @@
     <class>ups.edu.ec.entities.FACTURACION.TraFacturaDetalle</class>
     <class>ups.edu.ec.entities.FACTURACION.TraFacturaEstado</class>
     <class>ups.edu.ec.entities.FACTURACION.TraFacturaIvas</class>
-    <class>ups.edu.ec.entities.FACTURACION.TraFacturaTipoPagoCobro</class>
     <class>ups.edu.ec.entities.contabilidadgeneral.Contabilidad_Retenciones</class>
     <class>ups.edu.ec.entities.contabilidadgeneral.Numero_Egresos</class>
     <class>ups.edu.ec.entities.contabilidadgeneral.Numero_Facturas</class>
@@ -15,9 +14,7 @@
     <class>ups.edu.ec.entities.contabilidadgeneral.Numero_Liquidacion</class>
     <class>ups.edu.ec.entities.contabilidadgeneral.Rutas</class>
     <class>ups.edu.ec.entities.situacionInicial.tra_tipo_cuentas</class>
-    <class>ups.edu.ec.entities.situacionInicial.tra_conta_niveles</class>
-    <class>ups.edu.ec.entities.situacionInicial.tra_conta_mayor_detalles</class>
-    <class>ups.edu.ec.entities.situacionInicial.tra_conta_cuenta</class>
+    <class>ups.edu.ec.entities.FACTURACION.TraTipoPagoCobro</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/TRANSPORTE_DB"/>
       <property name="javax.persistence.jdbc.user" value="postgres"/>

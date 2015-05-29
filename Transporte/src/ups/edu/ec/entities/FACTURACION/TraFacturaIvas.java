@@ -7,11 +7,14 @@ package ups.edu.ec.entities.FACTURACION;
 
 import ups.edu.ec.entities.Abstract.TraAuditoria;
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -34,6 +37,19 @@ public class TraFacturaIvas extends TraAuditoria implements Serializable {
 
     @Column(name = "FIV_VALOR", nullable = false, precision = 2, length = 2)
     private int traFacturaIvasValor;
+    
+    // Relaciones PRIMARY KEY
+    // Relacion FacturaIvas_FacturaCabecera
+    @OneToMany(mappedBy = "FIV_ID_PK", fetch = FetchType.LAZY)
+    public List<TraFacturaCabecera> traFacturaCabeceraList;
+
+    public List<TraFacturaCabecera> getTraFacturaCabeceraList() {
+        return traFacturaCabeceraList;
+    }
+
+    public void setTraFacturaCabeceraList(List<TraFacturaCabecera> traFacturaCabeceraList) {
+        this.traFacturaCabeceraList = traFacturaCabeceraList;
+    }
 
     public int getTraFacturaIvasValor() {
         return traFacturaIvasValor;
