@@ -33,7 +33,6 @@ public class Security {
         // TODO code application logic here
         EntityManagerFactory emf=JPA_UTILS.getEntitiMangerFactory();
         EntityManager em=emf.createEntityManager();
-        
         UsuarioDAO usuarioDAO = new UsuarioDAO(em);
         RolDAO rolDAO=new RolDAO(em);
         UseRolDAO usuarioRolDAO=new UseRolDAO(em);
