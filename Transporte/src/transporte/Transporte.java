@@ -11,4 +11,8 @@ package transporte;
  */
 public class Transporte {
    
+    
+    public Transporte(){
+        System.out.println("Transporte");
+    }
 }
