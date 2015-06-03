@@ -97,7 +97,7 @@ public class TraFacturaCabecera extends TraAuditoria implements Serializable {
     // Relacion FacturaCabecera_FacturaEstado
     @OneToMany(mappedBy = "FCA_FES_FK", fetch = FetchType.LAZY)
     public List<TraFacturaEstado> traFacturaEstadoList;
-    
+    ///
     // Relaciones FOREIGN KEY
     // Foreign_Key TipoPagoCobro_FacturaCabecera
     @ManyToOne
