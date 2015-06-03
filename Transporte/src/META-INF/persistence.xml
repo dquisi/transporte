@@ -50,6 +50,7 @@
     <class>ups.edu.ec.entities.situacionInicial.tra_conta_mayor_detalles</class>
     <class>ups.edu.ec.entities.situacionInicial.tra_conta_niveles</class>
     <class>ups.edu.ec.entities.situacionInicial.tra_tipo_cuentas</class>
+    <class>transporte.Ejemplo</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/TRANSPORTE_DB"/>
       <property name="javax.persistence.jdbc.user" value="postgres"/>
